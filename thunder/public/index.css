@@ -1,0 +1,182 @@
+.App {
+  background-color: #282c34;
+}
+
+html, body, footer, .container {
+  height: 100%;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 10% 40% 40% 10%;
+  grid-template-columns: 25% 50% 25%;
+}
+
+#buttons {
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 3;
+
+  align-self: center;
+  justify-self: center;
+
+  display: flex;
+  flex-direction: row;
+}
+
+#buttons.start {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#buttons.move {
+  animation: arrow-move 2s ease;
+}
+
+#spotify-viewer {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+
+  align-self: center;
+  justify-self: center;
+
+  position: relative;
+  text-align: center;
+
+  animation: bob 2s ease-in-out infinite;
+
+  display: none;
+}
+
+#current-track {
+  border-radius: 4px;
+}
+
+#current-track:hover {
+  opacity: 25%;
+}
+
+#current-track:hover + .track-details {
+  display: block;
+}
+
+#current-track.fade {
+  animation: fade-in 2s ease
+}
+
+.track-details {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#play-button {
+  display: none;
+}
+
+#play-button.fade {
+  animation: fade-in 2s ease;
+  display: block;
+}
+
+i.material-icons {
+  color: white;
+  font-size: 200px;
+}
+
+i.material-icons:hover {
+  color: #1DB954;
+  cursor: pointer;
+}
+
+i.material-icons.prev-skip-buttons {
+  display: none;
+}
+
+i.material-icons.prev-skip-buttons.fade {
+  animation: fade-in 2s ease
+}
+
+#sentence-holder {
+  grid-row-start: 4;
+  grid-row-end: 5;
+  grid-column-start: 2;
+  grid-column-end: 3;
+
+  align-self: center;
+  justify-self: center;
+
+  display: none;
+  flex-direction: row;
+
+  width: 100%;
+
+  align-items: center;
+  justify-content: center;
+}
+
+#sentence-holder.fade {
+  animation: fade-in 2s ease;
+  display: block;
+}
+
+#link {
+  font-style: italic;
+  text-decoration: none;
+  color:white;
+
+  margin-left: 15px;
+  margin-right: 7px;
+}
+
+#link:hover {
+  color: #1DB954;
+  cursor: pointer;
+}
+
+#spotify-icon {
+  background: url("assets/Spotify_Icon_RGB_Green.png");
+  height: 25px;
+  width: 25px;
+
+  display: none;
+}
+
+
+
+@keyframes bob {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-10px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+@keyframes arrow-move {
+  100% {
+    top: 71%;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

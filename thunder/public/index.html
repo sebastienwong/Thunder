@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>Thunder</title>
+
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script src="/config.js"></script>
+
+    <script src="/weather.js"></script>
+    <script src="/animations.js"></script>
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script src="/spotify.js"></script>
+  </head>
+
+  <body class="App" onload="windowLoad()">
+    <div class="container">
+      <div id="buttons">
+        <i class="material-icons prev-skip-buttons" id="prev-button" onclick="previous()">skip_previous</i>
+        <i class="material-icons" id="play-button" onclick="toggle()">play_arrow</i>
+        <i class="material-icons prev-skip-buttons" id="skip-button" onclick="skip()">skip_next</i>
+      </div>
+      <div id="spotify-viewer">
+        <img id="current-track"/>
+        <div class="track-details">
+          <div id="current-track-name"></div>
+          <br>
+          <div id="current-track-artist"></div>
+        </div>
+        
+      </div>
+      <div id="sentence-holder">
+        <h4 id="sentence"></h4>
+        <h4><a id="link" target="_blank"></a></h4>
+        <i id="spotify-icon"></i>
+      </div>
+    </div>
+  </body>
+
+</html>
